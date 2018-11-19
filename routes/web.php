@@ -12,5 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    /*
+    \App\Post::create([
+        'title'=>'testtitle',
+        'content'=>'testcontent',
+    ]);
+    */
+    
+    /*
+    $post = new\App\Post();
+    $post -> title ='testtitle';
+    $post -> content = 'testcontent';
+    $post -> save(); 
+    */
+    $posts=\App\Post::all();
+    dd($posts);
+
 });
