@@ -65,16 +65,24 @@ Route::get('/', function () {
 
 	
 	    /* 取得 Collection */
+		/*
     $allPosts = \App\Post::all();
     dd($allPosts);
     $featuredPosts = \App\Post::where('is_feature',1) -> get();
-    dd($featuredPosts);
+    dd($featuredPosts);*/
     
     /* 取得 Model */
+	/*
     $fourthPost = \App\Post::find(4);
     dd($fourthPost);
     $lastPost = \App\Post::orderBy('id','DESC') -> first();
-    dd($lastPost);
+    dd($lastPost);	*/
+	
+	$post = \App\Post::find(2);
+    foreach($post -> comments as $comment){
+        echo $comment -> content.'<br>';
+    }
+    
 
 
 });
