@@ -28,13 +28,28 @@ Route::get('/', function () {
     */
 	
     /*  使用 all方法  */
-	$posts = \App\Post::where('id','<',10) -> orderBy('id','DESC') -> get();
-    dd($posts);
 
 	
      /*  使用 find 方法   */
     //$post=\App\Post::find(1);
     //dd($post);
+	
+	//$posts = \App\Post::where('id','<',10) -> orderBy('id','DESC') -> get();
+    //dd($posts);
+     /*    修改    */
+    /*
+    $posts = \App\Post::find(18);
+    $posts -> update([
+        'title' => 'updatetitle',
+        'content' => 'updatecontent',
+    ]);
+    */
+    
+    $post = \App\Post::find(19);
+    $post -> title='savedtitle';
+    $post -> content='savedcontent';
+    $post -> save();
+
 
 
 });
